@@ -9,7 +9,6 @@ class Server {
     this.middleware()
     //rutas de mi aplicacion
     this.routes()
-
   }
 
   middleware() {

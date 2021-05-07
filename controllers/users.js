@@ -1,4 +1,4 @@
-const { respose } = require('express')
+const { respose, request } = require('express')
 
 const usuariosGet = (req, res = respose) => {
   res.json({
@@ -6,12 +6,14 @@ const usuariosGet = (req, res = respose) => {
   })
 }
 
-const usuariosPut = (req, res = respose) => {
+const usuariosPut = (req = request, res = respose) => {
   const id = req.params.id
-  console.log(6)
-  res.status(403).json({
+  const { page } = req.query
+
+  res.status(200).json({
     msg: "put",
-    id: id
+    id: id,
+    page: page
   })
 }
 
